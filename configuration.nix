@@ -12,14 +12,13 @@
 
   # Use the systemd-boot EFI boot loader.
   boot.loader = {
-	efi = {
-		canTouchEfiVariables = true;
-		efiSysMountPoint = "/boot";
-	};
+	systemd-boot.enable = false;
+	efi.canTouchEfiVariables = false;
 	grub = {
 		enable = true;
-		efiSupport = true;
 		device = "nodev";
+		efiSupport = true;
+		efiInstallAsRemovable = true;
 	};
   };
 
@@ -53,6 +52,18 @@
 	windowManager.qtile.enable = true;
   };
   services.displayManager.ly.enable = true;
+
+  # NVIDIA
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware = {
+  	graphics.enable = true;
+  	nvidia = {
+  		modesetting.enable = true;
+  		open = true;
+  		nvidiaSettings = true;
+  		package = config.boot.kernelPackages.nvidiaPackages.beta;
+  	};
+  };
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";

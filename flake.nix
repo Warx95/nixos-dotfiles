@@ -13,6 +13,9 @@
 			system = "x86_64-linux";
 			modules = [
 				./configuration.nix
+				{
+					nixpkgs.config.allowUnfree = true;
+				}
 				home-manager.nixosModules.home-manager
 				{
 					home-manager = {
