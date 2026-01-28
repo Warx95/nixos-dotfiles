@@ -21,17 +21,6 @@ in
 		recursive = true;
 	})
 	configs;
-	
-	#xdg.configFile = {
-	#	"qtile" = {
-	#		source = create_symlink "${dotfiles}/qtile/";
-	#		recursive = true;
-	#	};	
-	#	"alacritty" = {
-	#		source = create_symlink "${dotfiles}/alacritty";
-	#		recursive = true;
-	#	};
-	#};
 
 	programs = {
 	
