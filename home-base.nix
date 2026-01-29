@@ -48,7 +48,7 @@ in
 	home.packages = with pkgs; [
 		alacritty
 		rofi
-		zed
+		zed-editor
 		nerd-fonts.jetbrains-mono
 	];
 }
