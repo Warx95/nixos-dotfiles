@@ -19,7 +19,7 @@
 
   # 3. Locale & Time
   time.timeZone = "Europe/Moscow";
-  
+
   # 4. Sound (Pipewire is recommended over PulseAudio now)
   services.pipewire = {
     enable = true;
@@ -34,11 +34,14 @@
 
   # 6. Common System Packages
   environment.systemPackages = with pkgs; [
-    git
     wget
     curl
     micro
   ];
+
+  programs = {
+    amnezia-vpn.enable = true;
+  };
 
   # 7. Desktop Environment
   services.xserver = {
@@ -51,7 +54,7 @@
 
   # 8. Nix Settings
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+
   # 9. State Version
-  system.stateVersion = "25.11"; 
+  system.stateVersion = "25.11";
 }

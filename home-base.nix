@@ -6,7 +6,7 @@ let
 	configs = {
 		qtile = "qtile";
 		alacritty = "alacritty";
-		rofi = "rofi";	
+		rofi = "rofi";
 	};
 in
 
@@ -24,7 +24,7 @@ in
 	configs;
 
 	programs = {
-	
+
 		git = {
 			enable = true;
 			settings = {
@@ -35,24 +35,29 @@ in
 				init.defaultBranch = "main";
 			};
 			extraConfig = {
-				pull.rebase = "false";	
+				pull.rebase = "false";
 			};
 		};
-		
+
 		bash = {
 			enable = true;
 			shellAliases = {
 				btw = "echo I use NixOS, btw";
 			};
 		};
-		
+
+		zed-editor = {
+		    enable = true;
+		    extensions = [ "nix" "toml" "yaml" ];
+		};
+
 	};
 	fonts.fontconfig.enable = true;
 	home.packages = with pkgs; [
 		alacritty
 		rofi
-		zed-editor
 		firefox
+		telegram-desktop
 		nerd-fonts.jetbrains-mono
 	];
 }
