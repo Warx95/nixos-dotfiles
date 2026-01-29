@@ -24,7 +24,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.rusantokhin = import ./home.nix;
+            users.rusantokhin = import ./hosts/${hostName}/home.nix;
             backupFileExtension = "backup";
           };
         }

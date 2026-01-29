@@ -1,4 +1,5 @@
 { config, pkgs, ... }:
+
 let
 	dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config";
 	create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
@@ -47,6 +48,7 @@ in
 	home.packages = with pkgs; [
 		alacritty
 		rofi
+		zed
 		nerd-fonts.jetbrains-mono
 	];
 }
