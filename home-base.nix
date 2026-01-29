@@ -34,6 +34,9 @@ in
 				};
 				init.defaultBranch = "main";
 			};
+			extraConfig = {
+				pull.rebase = "false";	
+			};
 		};
 		
 		bash = {
