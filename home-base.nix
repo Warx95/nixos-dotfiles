@@ -52,7 +52,10 @@ in
 		alacritty
 		rofi
 		zed-editor
+<<<<<<< HEAD
 		firefox
+=======
+>>>>>>> 5da345f20e7632829502b8e52e173c3cf7c30f2b
 		nerd-fonts.jetbrains-mono
 	];
 }
