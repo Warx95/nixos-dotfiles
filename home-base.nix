@@ -1,4 +1,5 @@
 { config, pkgs, ... }:
+
 let
 	dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config";
 	create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
@@ -21,17 +22,6 @@ in
 		recursive = true;
 	})
 	configs;
-	
-	#xdg.configFile = {
-	#	"qtile" = {
-	#		source = create_symlink "${dotfiles}/qtile/";
-	#		recursive = true;
-	#	};	
-	#	"alacritty" = {
-	#		source = create_symlink "${dotfiles}/alacritty";
-	#		recursive = true;
-	#	};
-	#};
 
 	programs = {
 	
@@ -58,6 +48,8 @@ in
 	home.packages = with pkgs; [
 		alacritty
 		rofi
+		zed-editor
+		firefox
 		nerd-fonts.jetbrains-mono
 	];
 }
